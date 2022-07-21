@@ -40,6 +40,9 @@ let mapleader = " "
 
 colorscheme gruvbox
 
+" NerdTree
+nnoremap <leader>t <cmd>NERDTreeToggle<cr>
+
 " Emmet
 let g:user_emmet_leader_key='<C-L>'
 
