@@ -22,6 +22,22 @@ require'lspconfig'.jedi_language_server.setup{
 	capabilities=capabilities,
 	on_attach=lsp_maps
 }
+require'lspconfig'.html.setup{
+	capabilities=capabilities,
+	on_attach=lsp_maps
+}
+require'lspconfig'.cssls.setup{
+	capabilities=capabilities,
+	on_attach=lsp_maps
+}
+require'lspconfig'.tsserver.setup{
+	capabilities=capabilities,
+	on_attach=lsp_maps
+}
+require'lspconfig'.jsonls.setup{
+	capabilities=capabilities,
+	on_attach=lsp_maps
+}
 
 -- Setup nvim-cmp.
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
