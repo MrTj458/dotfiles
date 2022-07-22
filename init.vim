@@ -4,6 +4,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
+Plug 'jiangmiao/auto-pairs'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
