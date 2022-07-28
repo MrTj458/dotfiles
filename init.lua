@@ -1,47 +1,27 @@
--- Set autocomplete capabilities.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
--- LSP keybinds
-function lsp_maps()
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
-	vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0})
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
-	vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer=0})
-	vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
-	vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})
-	vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer=0})
+function config(_config)
+	return vim.tbl_deep_extend("force", {
+		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+		on_attach = function()
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
+			vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0})
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
+			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer=0})
+			vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
+			vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})
+			vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer=0})
+		end
+	}, _config or {})
 end
 
 -- Language servers.
-require'lspconfig'.gopls.setup{
-	capabilities=capabilities,
-	on_attach=lsp_maps 
-}
-require'lspconfig'.jedi_language_server.setup{
-	capabilities=capabilities,
-	on_attach=lsp_maps
-}
-require'lspconfig'.html.setup{
-	capabilities=capabilities,
-	on_attach=lsp_maps
-}
-require'lspconfig'.cssls.setup{
-	capabilities=capabilities,
-	on_attach=lsp_maps
-}
-require'lspconfig'.tsserver.setup{
-	capabilities=capabilities,
-	on_attach=lsp_maps
-}
-require'lspconfig'.eslint.setup{
-	capabilities=capabilities,
-	on_attach=lsp_maps
-}
-require'lspconfig'.jsonls.setup{
-	capabilities=capabilities,
-	on_attach=lsp_maps
-}
+require'lspconfig'.gopls.setup(config())
+require'lspconfig'.jedi_language_server.setup(config())
+require'lspconfig'.html.setup(config())
+require'lspconfig'.cssls.setup(config())
+require'lspconfig'.tsserver.setup(config())
+require'lspconfig'.eslint.setup(config())
+require'lspconfig'.jsonls.setup(config())
 
 -- Setup nvim-cmp.
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
@@ -66,3 +46,14 @@ sources = cmp.config.sources({
   { name = 'buffer' },
 })
 })
+
+-- Tree-sitter config
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+
+-- Other setup
+require("nvim-autopairs").setup{}

@@ -4,9 +4,11 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
-Plug 'jiangmiao/auto-pairs'
-
-" LSP
+Plug 'windwp/nvim-autopairs'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'gpanders/editorconfig.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 
 " Autocompletion
@@ -16,9 +18,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 call plug#end()
 
@@ -38,11 +37,14 @@ let mapleader = " "
 :set signcolumn=yes
 :set incsearch
 :set colorcolumn=80
+:set cmdheight=1
 
+" Colors
 colorscheme gruvbox
 
 " NerdTree
 nnoremap <leader>t <cmd>NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
 
 " Emmet
 let g:user_emmet_leader_key='<C-L>'
