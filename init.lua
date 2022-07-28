@@ -34,6 +34,10 @@ require'lspconfig'.tsserver.setup{
 	capabilities=capabilities,
 	on_attach=lsp_maps
 }
+require'lspconfig'.eslint.setup{
+	capabilities=capabilities,
+	on_attach=lsp_maps
+}
 require'lspconfig'.jsonls.setup{
 	capabilities=capabilities,
 	on_attach=lsp_maps
