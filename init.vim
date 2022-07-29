@@ -35,7 +35,7 @@ let mapleader = " "
 :set noerrorbells
 :set scrolloff=8
 :set signcolumn=yes
-:set incsearch
+":set incsearch
 :set colorcolumn=80
 :set cmdheight=1
 

@@ -20,7 +20,7 @@ require'lspconfig'.jedi_language_server.setup(config())
 require'lspconfig'.html.setup(config())
 require'lspconfig'.cssls.setup(config())
 require'lspconfig'.tsserver.setup(config())
-require'lspconfig'.eslint.setup(config())
+-- require'lspconfig'.eslint.setup(config())
 require'lspconfig'.jsonls.setup(config())
 
 -- Setup nvim-cmp.
@@ -55,5 +55,12 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- Other setup
+-- Telescope
+require('telescope').setup{
+	defaults = {
+		file_ignore_patterns = { "node_modules" }
+	}
+}
+
+-- Auto pairs
 require("nvim-autopairs").setup{}
