@@ -50,7 +50,6 @@ sources = cmp.config.sources({
 })
 })
 
--- Tree-sitter config
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -58,12 +57,27 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- Telescope
 require('telescope').setup{
 	defaults = {
 		file_ignore_patterns = { "node_modules" }
 	}
 }
 
--- Auto pairs
 require("nvim-autopairs").setup{}
+
+require('lualine').setup{
+	options = {
+		icons_enabled = false,
+		theme = 'gruvbox',
+		component_separators = '|',
+		section_separators = '',
+	},
+}
+
+require('Comment').setup{}
+
+require('indent_blankline').setup {
+	show_trailing_blankline_indent = false,
+}
+
+require('gitsigns').setup()
