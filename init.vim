@@ -2,14 +2,15 @@ call plug#begin()
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdtree'
-Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'gpanders/editorconfig.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'neovim/nvim-lspconfig'
+Plug 'TimUntersberger/neogit'
 
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'
@@ -31,11 +32,11 @@ let mapleader = " "
 :set smarttab
 :set softtabstop=4
 :set mouse=a
-:set nohlsearch
+" :set nohlsearch
 :set noerrorbells
 :set scrolloff=8
 :set signcolumn=yes
-":set incsearch
+:set incsearch
 :set colorcolumn=80
 :set cmdheight=1
 
