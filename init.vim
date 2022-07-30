@@ -51,7 +51,7 @@ let mapleader = " "
 colorscheme gruvbox
 
 " Git
-nnoremap <leader>gi <cmd>Neogit<cr>
+nnoremap <leader>gc <cmd>Neogit<cr>
 
 " NerdTree
 nnoremap <leader>t <cmd>NERDTreeToggle<cr>

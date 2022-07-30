@@ -20,8 +20,20 @@ require'lspconfig'.jedi_language_server.setup(config())
 require'lspconfig'.html.setup(config())
 require'lspconfig'.cssls.setup(config())
 require'lspconfig'.tsserver.setup(config())
-require'lspconfig'.emmet_ls.setup(config())
 require'lspconfig'.jsonls.setup(config())
+require'lspconfig'.intelephense.setup(config())
+require'lspconfig'.emmet_ls.setup(config({
+	filetypes = {
+		"php",
+		"html",
+		"typescriptreact",
+		"javascriptreact",
+		"css",
+		"sass",
+		"scss",
+		"less",
+	}
+}))
 
 -- Disabled language servers
 -- require'lspconfig'.eslint.setup(config())
@@ -30,37 +42,48 @@ require'lspconfig'.jsonls.setup(config())
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 local cmp = require'cmp'
 cmp.setup({
-snippet = {
-  expand = function(args)
-	require('luasnip').lsp_expand(args.body)
-  end,
-},
-mapping = cmp.mapping.preset.insert({
-  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-  ['<C-f>'] = cmp.mapping.scroll_docs(4),
-  ['<C-Space>'] = cmp.mapping.complete(),
-  ['<C-e>'] = cmp.mapping.abort(),
-  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-}),
-sources = cmp.config.sources({
-  { name = 'nvim_lsp' },
-  { name = 'luasnip' },
-}, {
-  { name = 'buffer' },
-})
+	snippet = {
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body)
+		end,
+	},
+	mapping = cmp.mapping.preset.insert({
+		['<C-b>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.abort(),
+		['<Tab>'] = cmp.mapping.confirm({ select = true }),
+		['<C-j>'] = cmp.mapping.select_next_item(),
+		['<C-k>'] = cmp.mapping.select_prev_item(),
+	}),
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+	}, {
+		{ name = 'buffer' },
+	})
 })
 
 require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
 }
 
 require('telescope').setup{
 	defaults = {
-		file_ignore_patterns = { "node_modules" }
-	}
+		file_ignore_patterns = {
+			".git/",
+			"node_modules/",
+			"vendor/",
+		},
+	},
+	pickers = {
+		find_files = {
+			hidden = true,
+		},
+	},
 }
 
 require("nvim-autopairs").setup{}
