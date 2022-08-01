@@ -1,6 +1,6 @@
 call plug#begin()
-
-Plug 'gruvbox-community/gruvbox'
+ 
+Plug 'sainnhe/gruvbox-material'
 Plug 'preservim/nerdtree'
 Plug 'sbdchd/neoformat'
 Plug 'windwp/nvim-autopairs'
@@ -37,7 +37,7 @@ let mapleader = " "
 :set smarttab
 :set softtabstop=4
 :set mouse=a
-" :set nohlsearch
+:set nohlsearch
 :set noerrorbells
 :set scrolloff=8
 :set signcolumn=yes
@@ -48,7 +48,14 @@ let mapleader = " "
 :set noshowcmd
 
 " Colors
-colorscheme gruvbox
+if has('termguicolors')
+  set termguicolors
+endif
+set background=dark
+let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_foreground = "mix"
+colorscheme gruvbox-material
 
 " Git
 nnoremap <leader>gc <cmd>Neogit<cr>
@@ -70,6 +77,8 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>gb <cmd>Telescope git_branches<cr>
+nnoremap <leader>gs <cmd>Telescope spell_suggest<cr>
 
 " Neovim lua config
 lua require('init')

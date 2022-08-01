@@ -10,6 +10,7 @@ function config(_config)
 			vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
 			vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})
 			vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer=0})
+			vim.keymap.set("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>", {buffer=0})
 		end
 	}, _config or {})
 end
@@ -20,8 +21,11 @@ require'lspconfig'.jedi_language_server.setup(config())
 require'lspconfig'.html.setup(config())
 require'lspconfig'.cssls.setup(config())
 require'lspconfig'.tsserver.setup(config())
+require'lspconfig'.eslint.setup(config())
 require'lspconfig'.jsonls.setup(config())
+require'lspconfig'.volar.setup(config())
 require'lspconfig'.intelephense.setup(config())
+require'lspconfig'.yamlls.setup(config())
 require'lspconfig'.emmet_ls.setup(config({
 	filetypes = {
 		"php",
@@ -34,9 +38,6 @@ require'lspconfig'.emmet_ls.setup(config({
 		"less",
 	}
 }))
-
--- Disabled language servers
--- require'lspconfig'.eslint.setup(config())
 
 -- Setup nvim-cmp.
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
@@ -91,7 +92,7 @@ require("nvim-autopairs").setup{}
 require('lualine').setup{
 	options = {
 		icons_enabled = false,
-		theme = 'gruvbox',
+		theme = 'gruvbox-material',
 		component_separators = '|',
 		section_separators = '',
 	},
