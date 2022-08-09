@@ -1,6 +1,6 @@
 call plug#begin()
  
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'preservim/nerdtree'
 Plug 'sbdchd/neoformat'
 Plug 'windwp/nvim-autopairs'
@@ -29,31 +29,34 @@ call plug#end()
 
 let mapleader = " "
 
-:set number
-:set relativenumber
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
-:set mouse=a
-:set nohlsearch
-:set noerrorbells
-:set scrolloff=8
-:set signcolumn=yes
-:set incsearch
-:set colorcolumn=80
-:set cmdheight=1
-:set noshowmode
-:set noshowcmd
+set number
+set relativenumber
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
+set mouse=a
+set nohlsearch
+set noerrorbells
+set scrolloff=8
+set signcolumn=yes
+set incsearch
+set colorcolumn=80
+set cmdheight=1
+set noshowmode
+set noshowcmd
 
 " Colors
 if has('termguicolors')
   set termguicolors
 endif
-let g:gruvbox_transparent_bg=1
-colorscheme gruvbox
-hi Normal ctermbg=NONE guibg=NONE
+set background=dark
+let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_foreground = 'material'
+colorscheme gruvbox-material
 
 " Git
 nnoremap <leader>gc <cmd>Neogit<cr>
