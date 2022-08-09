@@ -1,6 +1,6 @@
 call plug#begin()
  
-Plug 'sainnhe/gruvbox-material'
+Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'sbdchd/neoformat'
 Plug 'windwp/nvim-autopairs'
@@ -51,11 +51,9 @@ let mapleader = " "
 if has('termguicolors')
   set termguicolors
 endif
-set background=dark
-let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_transparent_background = 1
-let g:gruvbox_material_foreground = "mix"
-colorscheme gruvbox-material
+let g:gruvbox_transparent_bg=1
+colorscheme gruvbox
+hi Normal ctermbg=NONE guibg=NONE
 
 " Git
 nnoremap <leader>gc <cmd>Neogit<cr>
