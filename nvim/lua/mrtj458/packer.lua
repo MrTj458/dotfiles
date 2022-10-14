@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use {'catppuccin/vim', as = 'catppuccin'}
+    use {"catppuccin/nvim", as = "catppuccin"}
     use 'preservim/nerdtree'
     use 'sbdchd/neoformat'
     use 'windwp/nvim-autopairs'
