@@ -16,9 +16,10 @@ cmp.setup({
 		['<C-k>'] = cmp.mapping.select_prev_item(),
 	}),
 	sources = cmp.config.sources({
+		{ name = 'nvim_lua' },
 		{ name = 'nvim_lsp' },
+		{ name = 'path' },
 		{ name = 'luasnip' },
-	}, {
-		{ name = 'buffer' },
+		{ name = 'buffer', keyword_length = 5 },
 	})
 })

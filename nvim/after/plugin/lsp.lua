@@ -26,6 +26,7 @@ require'lspconfig'.jsonls.setup(config())
 require'lspconfig'.volar.setup(config())
 require'lspconfig'.intelephense.setup(config())
 require'lspconfig'.yamlls.setup(config())
+require'lspconfig'.svelte.setup(config())
 require'lspconfig'.emmet_ls.setup(config({
 	filetypes = {
 		"php",
