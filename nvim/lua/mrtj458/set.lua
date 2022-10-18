@@ -1,5 +1,6 @@
 vim.spell = true
-vim.opt.nu = true
+vim.opt.number = true
+vim.opt.cursorline = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -16,5 +17,3 @@ vim.opt.showmode = false
 vim.opt.errorbells = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
-vim.g.mapleader = " "

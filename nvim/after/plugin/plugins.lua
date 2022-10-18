@@ -1,12 +1,12 @@
 vim.g.neoformat_try_node_exe = 1
 vim.g.NERDTreeShowHidden = 1
 
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
-}
+})
 
 require('telescope').setup{
 	defaults = {
@@ -41,3 +41,11 @@ require('indent_blankline').setup {
 }
 
 require('gitsigns').setup()
+
+require('illuminate').configure({
+	providers = {
+		'lsp',
+		'treesitter',
+		'regex',
+	}
+})

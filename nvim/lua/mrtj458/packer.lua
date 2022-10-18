@@ -4,7 +4,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {"catppuccin/nvim", as = "catppuccin"}
-    use 'preservim/nerdtree'
+    use 'nvim-tree/nvim-tree.lua'
     use 'sbdchd/neoformat'
     use 'windwp/nvim-autopairs'
     use 'nvim-lua/plenary.nvim'
@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
     use 'tpope/vim-sleuth'
     use 'lewis6991/gitsigns.nvim'
+    use 'RRethy/vim-illuminate'
 
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'

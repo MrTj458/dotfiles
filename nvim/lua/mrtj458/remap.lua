@@ -1,8 +1,10 @@
+vim.g.mapleader = " "
+
 local nnoremap = require("mrtj458.keymap").nnoremap
 
 nnoremap("<leader>pv", "<cmd>Ex<CR>")
 
-nnoremap("<leader>t", "<cmd>NERDTreeToggle<cr>")
+nnoremap("<leader>t", "<cmd>NvimTreeToggle<cr>")
 nnoremap("<leader>fa", "<cmd>Neoformat<cr>")
 nnoremap("<leader>fd", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>")

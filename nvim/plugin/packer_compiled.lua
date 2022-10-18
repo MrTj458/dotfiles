@@ -139,11 +139,6 @@ _G.packer_plugins = {
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
   },
-  nerdtree = {
-    loaded = true,
-    path = "/home/tj/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -159,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -168,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -183,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/tj/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-sleuth"] = {
     loaded = true,
