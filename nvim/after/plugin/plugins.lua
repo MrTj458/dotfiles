@@ -49,3 +49,5 @@ require('illuminate').configure({
 		'regex',
 	}
 })
+
+require('neoscroll').setup()

@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-sleuth'
     use 'lewis6991/gitsigns.nvim'
     use 'RRethy/vim-illuminate'
+    use 'karb94/neoscroll.nvim'
 
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'

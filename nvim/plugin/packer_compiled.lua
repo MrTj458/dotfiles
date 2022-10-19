@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/tj/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -168,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-  },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/home/tj/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["packer.nvim"] = {
     loaded = true,
