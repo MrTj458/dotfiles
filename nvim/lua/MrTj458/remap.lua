@@ -5,3 +5,5 @@ vim.keymap.set("n", "<leader>fa", "<cmd>Neoformat<cr>")
 
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
+
+vim.keymap.set("n", "<leader>t", "<cmd>NERDTreeToggle<cr>")

@@ -36,4 +36,5 @@ return require('packer').startup(function(use)
     use 'RRethy/vim-illuminate'
     use 'tpope/vim-sleuth'
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'preservim/nerdtree'
 end)
