@@ -10,7 +10,6 @@ vim.keymap.set("n", "H", "<cmd>:tabp<cr>")
 vim.keymap.set("n", "L", "<cmd>:tabn<cr>")
 
 vim.keymap.set("n", "<leader>v", "<cmd>:vsplit<cr>")
-vim.keymap.set("n", "<leader>s", "<cmd>:split<cr>")
+vim.keymap.set("n", "<leader>S", "<cmd>:split<cr>")
 
-vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>")
 vim.keymap.set('n', 'J', vim.diagnostic.open_float)
