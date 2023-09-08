@@ -29,3 +29,7 @@ require("indent_blankline").setup{
   show_trailing_blankline_indent = false,
   show_current_context_start = true,
 }
+
+require("lsp_signature").setup{
+    hint_enable = false,
+}

@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
     use 'sbdchd/neoformat'
     use 'preservim/nerdtree'
     use 'karb94/neoscroll.nvim'
+    use 'ray-x/lsp_signature.nvim'
 
     use "rebelot/kanagawa.nvim"
 end)
