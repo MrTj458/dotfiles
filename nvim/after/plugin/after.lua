@@ -25,10 +25,7 @@ require("illuminate").configure({
     }
 })
 
-require("indent_blankline").setup{
-  show_trailing_blankline_indent = false,
-  show_current_context_start = true,
-}
+require("ibl").setup{}
 
 require("lsp_signature").setup{
     hint_enable = false,
