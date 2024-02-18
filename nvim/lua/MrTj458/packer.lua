@@ -1,8 +1,7 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
+    -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.x',
@@ -18,20 +17,16 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        branch = 'v3.x',
         requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {
-                'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
+            {'williamboman/mason.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
 
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
             -- Autocompletion
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-nvim-lsp'},
@@ -39,21 +34,41 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Git
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
-    use 'tpope/vim-sleuth'
-    use 'folke/which-key.nvim'
     use 'lewis6991/gitsigns.nvim'
-    use 'nvim-lualine/lualine.nvim'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'numToStr/Comment.nvim'
 
-    use 'RRethy/vim-illuminate'
-    use 'windwp/nvim-autopairs'
-    use 'sbdchd/neoformat'
-    use 'preservim/nerdtree'
-    use 'karb94/neoscroll.nvim'
+    -- Auto tab width
+    use 'tpope/vim-sleuth'
+
+    -- Show function signature when typing
     use 'ray-x/lsp_signature.nvim'
 
-    use "rebelot/kanagawa.nvim"
+    -- Keybind hints
+    use 'folke/which-key.nvim'
+
+    -- Indent guides
+    use 'lukas-reineke/indent-blankline.nvim'
+
+    -- Comment blocks
+    use 'numToStr/Comment.nvim'
+
+    -- Highlight word on hover
+    use 'RRethy/vim-illuminate'
+
+    -- Match brackets
+    use 'windwp/nvim-autopairs'
+
+    -- Smooth scroll
+    use 'karb94/neoscroll.nvim'
+
+    -- Formatting
+    use 'sbdchd/neoformat'
+
+    -- Colors and layout
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'preservim/nerdtree'
+    use 'nvim-lualine/lualine.nvim'
+    use "sainnhe/gruvbox-material"
 end)

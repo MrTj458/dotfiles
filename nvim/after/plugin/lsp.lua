@@ -1,8 +1,21 @@
-local lsp = require('lsp-zero').preset({})
+local lsp_zero = require('lsp-zero')
 
-lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+lsp_zero.on_attach(function(client, bufnr)
+  lsp_zero.default_keymaps({buffer = bufnr})
 end)
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+      gopls,
+      volar,
+      emmet_ls,
+      tsserver,
+  },
+  handlers = {
+    lsp_zero.default_setup,
+  },
+})
 
 require('lspconfig').emmet_ls.setup({
     filetypes = {
@@ -18,10 +31,7 @@ require('lspconfig').emmet_ls.setup({
     }
 })
 
-lsp.setup()
-
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
     mapping = {
@@ -30,3 +40,4 @@ cmp.setup({
         ['<C-k>'] = cmp.mapping.select_prev_item(),
     }
 })
+

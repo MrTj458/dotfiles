@@ -5,7 +5,7 @@ require("nvim-autopairs").setup{}
 require("lualine").setup{
     options = {
         icons_enabled = false,
-        theme = 'kanagawa',
+        theme = 'gruvbox-material',
         component_separators = '|',
         section_separators = '',
     },
@@ -30,3 +30,5 @@ require("ibl").setup{}
 require("lsp_signature").setup{
     hint_enable = false,
 }
+
+require("which-key").setup{}
