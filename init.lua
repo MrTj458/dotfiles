@@ -35,6 +35,9 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 -- vim.opt.clipboard = "unnamedplus"
 
+-- Yank to windows clipboard.
+vim.keymap.set("v", "<leader>y", ":'<,'>w !clip.exe<CR><CR>", { desc = "[Y]ank to Windows clipboard." })
+
 -- Enable break indent
 vim.opt.breakindent = true
 
